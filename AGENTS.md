@@ -1,6 +1,11 @@
-## RULES
+# Project Rules
 
-- 使用者決定專案的高層方向與產品選擇，例如功能範圍、操作方式及視覺版面。遇到會改變這些方向的選擇時，先整理具體方案並詢問使用者。
-- AI 負責技術設計與實作，包括架構、演算法、資料結構、通訊方法、錯誤處理及驗證方式。這些技術細節由 AI 依需求選擇，不需逐項請使用者決定；若會影響高層方向，再提出確認。
-- 實作前清楚說明要處理的目標與主要做法；發現需求有歧義或實際條件與假設不符時，先告知使用者並釐清。
-- 每次只修改與當前任務相關的內容；完成後檢查變更，並將任務相關檔案 commit/push。
+- The user decides high-level project direction and feature scope; ask before changing either.
+- The AI chooses technical details, including algorithms, communication, module organization, data structures, error handling, and testing strategy.
+- German is a Rust, learning-oriented distributed systems project.
+- Do not implement distributed algorithms before they are requested.
+- Keep each feature small, runnable, and testable; prefer simple, understandable designs over production-scale engineering.
+- Confirm a dependency is necessary before adding it.
+- Do not add a GUI, web frontend, or large framework without the user's direction.
+- Before implementation, state the goal and approach; clarify material ambiguity or mismatched assumptions.
+- Make only task-related changes, inspect the final diff, and commit and push task files when completing repository work.
