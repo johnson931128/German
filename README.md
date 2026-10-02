@@ -8,7 +8,7 @@ German is an educational project inspired by Apache Kafka's architecture. It is 
 
 ## Current Scope
 
-The repository currently contains a minimal Rust CLI baseline. Broker, Topic, Partition, Record, log, producer, consumer, and offset behavior are planned and are not implemented yet.
+The repository currently includes a small in-memory Producer → Broker → Topic → Consumer model. Run `cargo run -- model` to publish four sample temperature records and read them back. This is an educational model with no networking, persistence, partitioning, or replication; it does not implement Kafka protocol compatibility.
 
 ## Long-term Direction
 
@@ -34,4 +34,4 @@ cargo test
 
 ## Project Status
 
-The project is at the foundation stage. The Rust CLI builds, but distributed log functionality is not implemented yet.
+The project remains at the foundation stage. The model demonstrates basic publish/subscribe responsibilities, while Partition, append-only log, and offset behavior from Phase 1 remain unimplemented.
