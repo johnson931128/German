@@ -39,6 +39,12 @@ impl Broker {
         Ok(())
     }
 
+    pub fn topics(&self) -> impl Iterator<Item = (&str, &Topic)> {
+        self.topics
+            .iter()
+            .map(|(name, topic)| (name.as_str(), topic))
+    }
+
     pub(crate) fn publish(&mut self, topic_name: &str, record: Record) -> Result<(), ModelError> {
         let topic = self
             .topics

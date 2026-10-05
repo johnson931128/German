@@ -1,13 +1,18 @@
 mod model;
+mod visual;
 
 use model::{Broker, Consumer, Producer};
 
-fn main() {
+fn main() -> eframe::Result<()> {
     let mode = std::env::args().nth(1);
     match mode.as_deref() {
-        Some("model") => run_model_demo(),
+        Some("model") => {
+            run_model_demo();
+            Ok(())
+        }
+        Some("visual") => visual::run(),
         _ => {
-            eprintln!("Usage: cargo run -- model");
+            eprintln!("Usage: cargo run -- <model|visual>");
             std::process::exit(2);
         }
     }

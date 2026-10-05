@@ -24,6 +24,24 @@ mod tests {
     }
 
     #[test]
+    fn broker_topics_exposes_read_only_topic_state() {
+        let mut broker = Broker::new();
+        broker.create_topic("temperature").unwrap();
+        broker.create_topic("orders").unwrap();
+
+        let mut topics: Vec<_> = broker
+            .topics()
+            .map(|(name, topic)| (name.to_owned(), topic.records().len()))
+            .collect();
+        topics.sort();
+
+        assert_eq!(
+            topics,
+            [("orders".to_owned(), 0), ("temperature".to_owned(), 0)]
+        );
+    }
+
+    #[test]
     fn producer_publishes_record_to_topic() {
         let mut broker = Broker::new();
         broker.create_topic("temperature").unwrap();

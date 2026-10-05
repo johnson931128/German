@@ -10,6 +10,8 @@ German is an educational project inspired by Apache Kafka's architecture. It is 
 
 The repository currently includes a small in-memory Producer → Broker → Topic → Consumer model. Run `cargo run -- model` to publish four sample temperature records and read them back. This is an educational model with no networking, persistence, partitioning, or replication; it does not implement Kafka protocol compatibility.
 
+Run `cargo run -- visual` to open the educational GUI visualization of the same Producer → Broker → Topic → Consumer data flow. It uses the model's in-memory Broker state and remains in-memory only, with no networking, persistence, partition, replication, or offset tracking.
+
 ## Long-term Direction
 
 Build understanding incrementally, starting with a single broker and later exploring multiple brokers, replication, failure handling, coordination, and related distributed systems concepts.
@@ -24,6 +26,12 @@ cargo build
 
 ```powershell
 cargo run
+```
+
+Start the educational visualization:
+
+```powershell
+cargo run -- visual
 ```
 
 ## Test
