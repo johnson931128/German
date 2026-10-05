@@ -1,4 +1,5 @@
 mod model;
+mod simulation;
 mod visual;
 
 use model::{Broker, Consumer, Producer};

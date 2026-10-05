@@ -1,4 +1,5 @@
 mod app;
+mod canvas;
 
 pub fn run() -> eframe::Result<()> {
     let options = eframe::NativeOptions {
@@ -9,8 +10,13 @@ pub fn run() -> eframe::Result<()> {
     };
 
     eframe::run_native(
-        "German — Publish / Subscribe Model",
+        "German - Pub/Sub Simulation",
         options,
-        Box::new(|_creation_context| Ok(Box::new(app::PubSubApp::new()))),
+        Box::new(|creation_context| {
+            creation_context
+                .egui_ctx
+                .set_visuals(eframe::egui::Visuals::dark());
+            Ok(Box::new(app::PubSubApp::new()))
+        }),
     )
 }
